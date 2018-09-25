@@ -2,6 +2,8 @@ package io.vloggrapp.controller;
 
 import io.vloggrapp.dao.IdeaDAO;
 import io.vloggrapp.model.Idea;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -10,6 +12,7 @@ import javax.ws.rs.*;
 @Produces("application/json")
 public class IdeaController {
 
+    public static final Logger logger = LoggerFactory.getLogger(IdeaController.class);
     private final IdeaDAO ideaDAO;
 
     @Inject

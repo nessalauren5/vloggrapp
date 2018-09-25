@@ -2,6 +2,8 @@ package io.vloggrapp.controller;
 
 import io.vloggrapp.dao.Vloggr;
 import io.vloggrapp.model.VloggrDAO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.ws.rs.POST;
@@ -12,6 +14,7 @@ import javax.ws.rs.Produces;
 @Produces("application/json")
 public class VloggrController {
 
+    public static final Logger logger = LoggerFactory.getLogger(VloggrController.class);
     private final VloggrDAO vloggrDAO;
 
 

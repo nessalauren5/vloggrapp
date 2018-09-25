@@ -1,18 +1,24 @@
 package io.vloggrapp.controller;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-@Path("/")
+
+@Controller
 public class ViewController {
 
-    @GET
+    public static final Logger logger = LoggerFactory.getLogger(ViewController.class);
+
+    @RequestMapping("/")
     public String homePage() {
+        logger.debug("Trying to process index page.");
         return "index";
     }
 
-    @Path("/test")
-    @GET
+    @GetMapping("/test")
     public String test(){
         return "index";
     }

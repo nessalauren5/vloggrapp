@@ -1,4 +1,4 @@
-package io.vloggrapp.app;
+package io.vloggrapp.config;
 
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.context.annotation.Configuration;

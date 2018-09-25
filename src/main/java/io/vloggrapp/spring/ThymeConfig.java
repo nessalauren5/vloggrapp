@@ -1,5 +1,6 @@
 package io.vloggrapp.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
@@ -21,7 +22,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 @EnableWebMvc
 @ComponentScan("io.vloggrapp")
 public class ThymeConfig implements ApplicationContextAware, WebMvcConfigurer {
-
+    @Autowired
     private ApplicationContext applicationContext;
 
     public void setApplicationContext(ApplicationContext applicationContext) {

@@ -1,18 +1,14 @@
-package io.vloggrapp.app;
+package io.vloggrapp.config;
 
 import io.vloggrapp.dao.IdeaDAO;
 import io.vloggrapp.dao.impl.IdeaDAOImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class VloggrApplication {
-
-	@Bean
-	protected IdeaDAO ideaDAO(){
-		return new IdeaDAOImpl();
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(VloggrApplication.class, args);
