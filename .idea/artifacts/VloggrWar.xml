@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="VloggrWar">
+    <output-path>$PROJECT_DIR$/out/artifacts/VloggrWar</output-path>
+    <root id="archive" name="vloggrapp.war">
+      <element id="module-output" name="vloggr.io" />
+      <element id="javaee-facet-resources" facet="vloggr.io/web/Web" />
+    </root>
+  </artifact>
+</component>

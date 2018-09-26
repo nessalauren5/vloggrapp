@@ -1,4 +1,4 @@
-package io.vloggrapp.spring;
+package io.vloggrapp.spring.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
@@ -10,7 +10,7 @@ public class MVCWebAppInitializer extends AbstractAnnotationConfigDispatcherServ
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[] { ThymeConfig.class };
+        return new Class[] { WebConfig.class };
     }
 
     @Override
