@@ -64,15 +64,15 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/images/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
 
-        // Register resource handler for images
+        // Register resource handler for css
         registry.addResourceHandler("/css/**").addResourceLocations("/WEB-INF/css/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
 
-        // Register resource handler for images
+        // Register resource handler for vendor resources
         registry.addResourceHandler("/vendor/**").addResourceLocations("/WEB-INF/vendor/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
 
-        // Register resource handler for images
+        // Register resource handler for js
         registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
     }

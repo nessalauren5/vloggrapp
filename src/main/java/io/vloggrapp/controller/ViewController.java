@@ -14,6 +14,12 @@ public class ViewController {
     public static final Logger logger = LoggerFactory.getLogger(ViewController.class);
 
     @GetMapping("/")
+    public String homePage() {
+        logger.debug("Trying to process index page.");
+        return "index";
+    }
+
+    @GetMapping("/home2")
     public String homePage(Model model) {
         logger.debug("Trying to process index page.");
         return "index";
