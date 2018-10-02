@@ -10,7 +10,7 @@
     <packaging>war</packaging>
     <properties>
         <jdk.version>1.8</jdk.version>
-        <spring.version>5.0.3.RELEASE</spring.version>
+        <spring.version>4.3.19.RELEASE</spring.version>
         <jstl.version>4.0.0</jstl.version>
         <junit.version>3.8.1</junit.version>
         <logback.version>1.2.3</logback.version>
@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>org.thymeleaf</groupId>
-            <artifactId>thymeleaf-spring5</artifactId>
+            <artifactId>thymeleaf-spring4</artifactId>
             <version>3.0.9.RELEASE</version>
         </dependency>
 
@@ -50,11 +50,10 @@
             <artifactId>javax.ws.rs-api</artifactId>
             <version>${javax.version}</version>
         </dependency>
-
         <dependency>
-            <groupId>org.glassfish.jersey.containers</groupId>
-            <artifactId>jersey-container-grizzly2-servlet</artifactId>
-            <version>${jersey.version}</version>
+            <groupId>org.glassfish.jersey.bundles</groupId>
+            <artifactId>jaxrs-ri</artifactId>
+            <version>${javax.version}</version>
         </dependency>
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
@@ -75,7 +74,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
         <!-- jackson -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>

@@ -19,8 +19,8 @@ public class ViewController {
         return "index";
     }
 
-    @GetMapping("/home2")
-    public String homePage(Model model) {
+    @GetMapping("/home")
+    public String homePage2(Model model) {
         logger.debug("Trying to process index page.");
         return "index";
     }
