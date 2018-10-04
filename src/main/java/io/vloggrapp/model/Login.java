@@ -1,8 +1,15 @@
 package io.vloggrapp.model;
 
-public class Login {
+import java.io.Serializable;
 
-    public String crdntl;
+public class Login implements Serializable {
+
+    private String crdntl;
+
+    public Login(){
+    }
+
+
 
     public String getCrdntl() {
         return crdntl;

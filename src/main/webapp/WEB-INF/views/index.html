@@ -31,13 +31,14 @@
                     <span class="pull-right"> <a href="#skip">Skip</a></span>
                 </div>
                 <p class="card-body">
-                    <form action="/api/login" id="login-form" method="POST" >
-                        <input id="crdntl" type="text" class="form-control" aria-label="Phone or Email" aria-describedby="inputGroup-sizing-default" placeholder="Email or Phone">
+                    <form id="login-form" >
+                        <input id="crdntl" type="text" class="form-control" aria-label="Phone or Email"
+                               aria-describedby="inputGroup-sizing-default" placeholder="Email or Phone">
+                    </form>
 
                 </p>
                 <p class="card-footer">
-                    <button type="submit">Login</button>
-                    </form>
+                    <button id="submit">Login</button>
                 </p>
              </div>
     </div>
@@ -46,12 +47,32 @@
 <!--===============================================================================================-->
 <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="../vendor/bootstrap/js/popper.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    var d = new Date();
-    var n = d.toLocaleTimeString();
-    $("#time").html(n);
+    $(document).ready(function() {
+        var d = new Date();
+        var n = d.toLocaleTimeString();
+        $("#time").html(n);
+        $("#submit").click(function () {
+
+           var creds = {crdntl : $("#crdntl").val()};
+
+            $.ajax({
+                url: "api/login/create",
+                method: "POST",
+                contentType:"application/json",
+                data: JSON.stringify(creds)
+            }).done(function(data) {
+               console.log(data);
+            }).fail(function(data) {
+                    alert( "error" );
+                    console.log(data);
+                });
+
+
+        });
+    });
     </script>
 </body>
 </html>

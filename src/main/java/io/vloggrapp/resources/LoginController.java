@@ -6,25 +6,29 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Controller
-@Produces("application/json")
 @Path("/login")
 public class LoginController {
 
      public static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @POST
-    public String loginOrCreateUser(Login login){
+    @Path("create")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Login loginOrCreateUser(Login login){
         logger.debug(login.toString());
-        return "User tried to login: " + login.getCrdntl();
+        return login;
+        //return "User tried to login: " + login.getCrdntl();
     }
 
     @POST
     public String loginOrCreateUser(){
+        logger.debug("received no object.");
         return("received no object.");
     }
 }
