@@ -12,6 +12,7 @@ import javax.ws.rs.ApplicationPath;
 public class JerseyConfig extends ResourceConfig {
 
     Logger logger = LoggerFactory.getLogger(JerseyConfig.class);
+
     public JerseyConfig() {
         // scan the resources package for our resources
         logger.debug("Registering resources: " + getClass().getPackage().getName() + ".resources");

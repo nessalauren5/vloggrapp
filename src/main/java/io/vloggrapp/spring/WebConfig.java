@@ -76,6 +76,10 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addResourceHandler("/vendor/**").addResourceLocations("/WEB-INF/vendor/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
 
+        // Register resource handler for font resources
+        registry.addResourceHandler("/fonts/**").addResourceLocations("/WEB-INF/fonts/")
+                .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());
+
         // Register resource handler for js
         registry.addResourceHandler("/js/**").addResourceLocations("/WEB-INF/js/")
                 .setCacheControl(CacheControl.maxAge(2, TimeUnit.HOURS).cachePublic());

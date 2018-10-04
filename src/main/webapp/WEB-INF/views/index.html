@@ -17,10 +17,41 @@
     <title>Hello World.</title>
 </head>
 <body>
-<p>Welcome to Vloggr.</p>
+<div class="d-flex justify-content-center">
+    <div class="row">
+        <div class="text-center">
+            <p>Welcome to Vloggr.</p>
+
+            <br>
+            <p> The current time is: <span id="time"></span></p>
+
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Please login</h5>
+                    <span class="pull-right"> <a href="#skip">Skip</a></span>
+                </div>
+                <p class="card-body">
+                    <form action="/api/login" id="login-form" method="POST" >
+                        <input id="crdntl" type="text" class="form-control" aria-label="Phone or Email" aria-describedby="inputGroup-sizing-default" placeholder="Email or Phone">
+
+                </p>
+                <p class="card-footer">
+                    <button type="submit">Login</button>
+                    </form>
+                </p>
+             </div>
+    </div>
+</div>
+</div>
 <!--===============================================================================================-->
 <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="../vendor/bootstrap/js/popper.min.js"></script>
+<script type="text/javascript">
+    var d = new Date();
+    var n = d.toLocaleTimeString();
+    $("#time").html(n);
+    </script>
 </body>
 </html>
